@@ -12,15 +12,15 @@ import SwiftData
 final class Fitting: Identifiable {
     @Attribute(.unique) var id: UUID = UUID()
     var name: String
-    var shipId: Int
+    var shipId: String
     
-    var highSlots: [Int]
-    var midSlots: [Int]
-    var lowSlots: [Int]
+    var highSlots: [String]
+    var midSlots: [String]
+    var lowSlots: [String]
     
     var subsystems: Subsystem?
     
-    init(id: UUID, name: String, shipId: Int, highSlots: [Int] = [], midSlots: [Int] = [], lowSlots: [Int] = [], subsystems: Subsystem? = nil) {
+    init(id: UUID, name: String, shipId: String, highSlots: [String] = [], midSlots: [String] = [], lowSlots: [String] = [], subsystems: Subsystem? = nil) {
         self.id = id
         self.name = name
         self.shipId = shipId
@@ -33,12 +33,12 @@ final class Fitting: Identifiable {
 
 @Model
 final class Subsystem {
-    var propulsion: Int?
-    var defensive: Int?
-    var core: Int?
-    var offensive: Int?
+    var propulsion: String?
+    var defensive: String?
+    var core: String?
+    var offensive: String?
     
-    init(propulsion: Int? = nil, defensive: Int? = nil, core: Int? = nil, offensive: Int? = nil) {
+    init(propulsion: String? = nil, defensive: String? = nil, core: String? = nil, offensive: String? = nil) {
         self.propulsion = propulsion
         self.defensive = defensive
         self.core = core
