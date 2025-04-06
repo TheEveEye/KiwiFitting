@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		759C382F2D9ED14F0054CBE8 /* SwiftESI in Frameworks */ = {isa = PBXBuildFile; productRef = 759C382E2D9ED14F0054CBE8 /* SwiftESI */; };
+		75F111B62DA28C1E0074E621 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 75F111B52DA28C1E0074E621 /* Yams */; };
+		75F1D0362DA290DC0074E621 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75F1D0352DA290D50074E621 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +29,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		751C07AB2DA2845900D6EDBD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		751C07AD2DA2845900D6EDBD /* SDEParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDEParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		759C37D62D9E75840054CBE8 /* KiwiFitting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KiwiFitting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759C37E92D9E75860054CBE8 /* KiwiFittingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiFittingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		759C37F32D9E75860054CBE8 /* KiwiFittingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiFittingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F1D0352DA290D50074E621 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		751C07AE2DA2845900D6EDBD /* SDEParser */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SDEParser;
+			sourceTree = "<group>";
+		};
 		759C37D82D9E75840054CBE8 /* KiwiFitting */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = KiwiFitting;
@@ -52,6 +73,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		751C07AA2DA2845900D6EDBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F111B62DA28C1E0074E621 /* Yams in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		759C37D32D9E75840054CBE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,9 +109,11 @@
 		759C37CD2D9E75840054CBE8 = {
 			isa = PBXGroup;
 			children = (
+				75F1D0352DA290D50074E621 /* .gitignore */,
 				759C37D82D9E75840054CBE8 /* KiwiFitting */,
 				759C37EC2D9E75860054CBE8 /* KiwiFittingTests */,
 				759C37F62D9E75860054CBE8 /* KiwiFittingUITests */,
+				751C07AE2DA2845900D6EDBD /* SDEParser */,
 				759C37D72D9E75840054CBE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +124,7 @@
 				759C37D62D9E75840054CBE8 /* KiwiFitting.app */,
 				759C37E92D9E75860054CBE8 /* KiwiFittingTests.xctest */,
 				759C37F32D9E75860054CBE8 /* KiwiFittingUITests.xctest */,
+				751C07AD2DA2845900D6EDBD /* SDEParser */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +132,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		751C07AC2DA2845900D6EDBD /* SDEParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 751C07B32DA2845900D6EDBD /* Build configuration list for PBXNativeTarget "SDEParser" */;
+			buildPhases = (
+				751C07A92DA2845900D6EDBD /* Sources */,
+				751C07AA2DA2845900D6EDBD /* Frameworks */,
+				751C07AB2DA2845900D6EDBD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				751C07AE2DA2845900D6EDBD /* SDEParser */,
+			);
+			name = SDEParser;
+			packageProductDependencies = (
+				75F111B52DA28C1E0074E621 /* Yams */,
+			);
+			productName = SDEParser;
+			productReference = 751C07AD2DA2845900D6EDBD /* SDEParser */;
+			productType = "com.apple.product-type.tool";
+		};
 		759C37D52D9E75840054CBE8 /* KiwiFitting */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 759C37FD2D9E75860054CBE8 /* Build configuration list for PBXNativeTarget "KiwiFitting" */;
@@ -179,6 +234,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					751C07AC2DA2845900D6EDBD = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					759C37D52D9E75840054CBE8 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -203,6 +261,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				759C382D2D9ED14F0054CBE8 /* XCLocalSwiftPackageReference "../SwiftESI" */,
+				75F111B42DA28C1E0074E621 /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 759C37D72D9E75840054CBE8 /* Products */;
@@ -212,6 +271,7 @@
 				759C37D52D9E75840054CBE8 /* KiwiFitting */,
 				759C37E82D9E75860054CBE8 /* KiwiFittingTests */,
 				759C37F22D9E75860054CBE8 /* KiwiFittingUITests */,
+				751C07AC2DA2845900D6EDBD /* SDEParser */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F1D0362DA290DC0074E621 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +302,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		751C07A92DA2845900D6EDBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		759C37D22D9E75840054CBE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +346,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		751C07B12DA2845900D6EDBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KP38NQP6R;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		751C07B22DA2845900D6EDBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KP38NQP6R;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		759C37FB2D9E75860054CBE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -407,7 +497,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KiwiFitting/Preview Content\"";
 				DEVELOPMENT_TEAM = 5KP38NQP6R;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -415,7 +505,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.somekiwi.KiwiFitting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,7 +525,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KiwiFitting/Preview Content\"";
 				DEVELOPMENT_TEAM = 5KP38NQP6R;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -443,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.somekiwi.KiwiFitting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -460,7 +550,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KP38NQP6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.somekiwi.KiwiFittingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +568,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KP38NQP6R;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.somekiwi.KiwiFittingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +613,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		751C07B32DA2845900D6EDBD /* Build configuration list for PBXNativeTarget "SDEParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				751C07B12DA2845900D6EDBD /* Debug */,
+				751C07B22DA2845900D6EDBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		759C37D12D9E75840054CBE8 /* Build configuration list for PBXProject "KiwiFitting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -568,10 +667,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		75F111B42DA28C1E0074E621 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		759C382E2D9ED14F0054CBE8 /* SwiftESI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftESI;
+		};
+		75F111B52DA28C1E0074E621 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75F111B42DA28C1E0074E621 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
