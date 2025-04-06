@@ -23,7 +23,7 @@ final class Fitting: Identifiable {
     init(id: UUID, name: String, shipID: String, highSlots: [String] = [], midSlots: [String] = [], lowSlots: [String] = [], subsystems: Subsystem? = nil) {
         self.id = id
         self.name = name
-        self.shipID = shipId
+        self.shipID = shipID
         self.highSlots = highSlots
         self.midSlots = midSlots
         self.lowSlots = lowSlots
