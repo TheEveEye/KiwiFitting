@@ -12,7 +12,7 @@ import SwiftData
 final class Fitting: Identifiable {
     @Attribute(.unique) var id: UUID = UUID()
     var name: String
-    var shipId: String
+    var shipID: String
     
     var highSlots: [String]
     var midSlots: [String]
@@ -20,10 +20,10 @@ final class Fitting: Identifiable {
     
     var subsystems: Subsystem?
     
-    init(id: UUID, name: String, shipId: String, highSlots: [String] = [], midSlots: [String] = [], lowSlots: [String] = [], subsystems: Subsystem? = nil) {
+    init(id: UUID, name: String, shipID: String, highSlots: [String] = [], midSlots: [String] = [], lowSlots: [String] = [], subsystems: Subsystem? = nil) {
         self.id = id
         self.name = name
-        self.shipId = shipId
+        self.shipID = shipId
         self.highSlots = highSlots
         self.midSlots = midSlots
         self.lowSlots = lowSlots
