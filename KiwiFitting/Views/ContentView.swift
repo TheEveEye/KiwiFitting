@@ -31,15 +31,14 @@ struct ContentView: View {
             }) {
                 Text("Search TypeID")
                     .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
             }
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(8)
 
             // Display the result if found
             if let typeID = resultTypeID {
                 Text("TypeID: \(typeID)")
-                    .font(.title)
                     .padding()
             } else {
                 Text("TypeID not found")
