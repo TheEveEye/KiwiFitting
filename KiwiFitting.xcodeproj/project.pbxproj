@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		759C382F2D9ED14F0054CBE8 /* SwiftESI in Frameworks */ = {isa = PBXBuildFile; productRef = 759C382E2D9ED14F0054CBE8 /* SwiftESI */; };
+		75A95DCF2DACA7F800AF875E /* KiwiUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 75A95DCE2DACA7F800AF875E /* KiwiUtilities */; };
+		75A9F64E2DACA8B200AF875E /* KiwiUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 75A9F64D2DACA8B200AF875E /* KiwiUtilities */; };
 		75F111B62DA28C1E0074E621 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 75F111B52DA28C1E0074E621 /* Yams */; };
 		75F1D0362DA290DC0074E621 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75F1D0352DA290D50074E621 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -85,7 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A9F64E2DACA8B200AF875E /* KiwiUtilities in Frameworks */,
 				759C382F2D9ED14F0054CBE8 /* SwiftESI in Frameworks */,
+				75A95DCF2DACA7F800AF875E /* KiwiUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +177,8 @@
 			name = KiwiFitting;
 			packageProductDependencies = (
 				759C382E2D9ED14F0054CBE8 /* SwiftESI */,
+				75A95DCE2DACA7F800AF875E /* KiwiUtilities */,
+				75A9F64D2DACA8B200AF875E /* KiwiUtilities */,
 			);
 			productName = KiwiFitting;
 			productReference = 759C37D62D9E75840054CBE8 /* KiwiFitting.app */;
@@ -262,6 +268,7 @@
 			packageReferences = (
 				759C382D2D9ED14F0054CBE8 /* XCLocalSwiftPackageReference "../SwiftESI" */,
 				75F111B42DA28C1E0074E621 /* XCRemoteSwiftPackageReference "Yams" */,
+				75A9F64C2DACA8B200AF875E /* XCLocalSwiftPackageReference "../../KiwiUtilities" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 759C37D72D9E75840054CBE8 /* Products */;
@@ -500,6 +507,8 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kiwi Fitting";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +537,8 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kiwi Fitting";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,6 +676,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SwiftESI;
 		};
+		75A9F64C2DACA8B200AF875E /* XCLocalSwiftPackageReference "../../KiwiUtilities" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../KiwiUtilities;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -682,6 +697,14 @@
 		759C382E2D9ED14F0054CBE8 /* SwiftESI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftESI;
+		};
+		75A95DCE2DACA7F800AF875E /* KiwiUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KiwiUtilities;
+		};
+		75A9F64D2DACA8B200AF875E /* KiwiUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KiwiUtilities;
 		};
 		75F111B52DA28C1E0074E621 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;

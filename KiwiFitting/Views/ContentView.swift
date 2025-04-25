@@ -27,7 +27,7 @@ struct ContentView: View {
 
             // Search Button to look up typeID based on entered name
             Button(action: {
-                searchTypeID(for: searchName)
+                resultTypeID = dataManager.searchTypeID(for: searchName)
             }) {
                 Text("Search TypeID")
                     .padding()
@@ -50,14 +50,7 @@ struct ContentView: View {
         .padding()
     }
 
-    // Function to search for the typeID using the DataManager
-    private func searchTypeID(for name: String) {
-        if let type = dataManager.InvTypes.first(where: { $0.value.name?["en"]?.lowercased() == name.lowercased() }) {
-            resultTypeID = type.key
-        } else {
-            resultTypeID = nil
-        }
-    }
+    
 }
 
 #Preview {
