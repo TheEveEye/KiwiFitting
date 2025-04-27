@@ -18,6 +18,8 @@ class DataManager: ObservableObject {
     @Published var InvTypes: [String: InvType] = [:]
     @Published var TypesDogma: [String: TypeDogma] = [:]
     @Published var MarketGroups: [String: MarketGroup] = [:]
+    @Published var DogmaEffects: [String: DogmaEffect] = [:]
+    @Published var DogmaAttributes: [String: DogmaAttribute] = [:]
     
     init() {
         loadData()
@@ -27,6 +29,8 @@ class DataManager: ObservableObject {
         loadJSONData(from: "types", into: &InvTypes)
         loadJSONData(from: "typeDogma", into: &TypesDogma)
         loadJSONData(from: "marketGroups", into: &MarketGroups)
+        loadJSONData(from: "dogmaEffects", into: &DogmaEffects)
+        loadJSONData(from: "dogmaAttributes", into: &DogmaAttributes)
     }
     
     private func loadJSONData<T: Decodable>(from fileName: String, into data: inout [String: T]) {

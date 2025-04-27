@@ -1,13 +1,13 @@
+////
+////  Fitting.swift
+////  KiwiFitting
+////
+////  Created by Oskar on 4/3/25.
+////
 //
-//  Fitting.swift
-//  KiwiFitting
+//import Foundation
+//import SwiftData
 //
-//  Created by Oskar on 4/3/25.
-//
-
-import Foundation
-import SwiftData
-
 //@Model
 //final class Fitting: Identifiable {
 //    @Attribute(.unique) var id: UUID = UUID()
@@ -78,7 +78,7 @@ import SwiftData
 //                    slot.append(typeID)
 //                }
 //            }
-//            
+//
 //            switch currentSection {
 //            case 0:
 //                appendToSlot(&lowSlots, line: line, emptyLabel: "[Empty Low slot]")

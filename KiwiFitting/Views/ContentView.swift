@@ -44,12 +44,33 @@ struct ContentView: View {
                 Text("TypeID not found")
                     .padding()
             }
-
-            Spacer()
+            if let typeID = resultTypeID {
+                ScrollView {
+                    Text("Effects")
+                    
+                    ForEach(dataManager.TypesDogma[typeID]!.dogmaEffects) {effect in
+                        HStack {
+                            Text(dataManager.DogmaEffects[String(effect.effectID)]?.effectName ?? "Effect not found")
+                            Spacer()
+                            Text(String(effect.isDefault))
+                        }
+                    }
+                    
+                    Text("Attributes")
+                    
+                    ForEach(dataManager.TypesDogma[typeID]!.dogmaAttributes) {attribute in
+                        HStack {
+                            Text(dataManager.DogmaAttributes[String(attribute.attributeID)]?.name ?? "Effect not found")
+                            Spacer()
+                            Text(String(attribute.value))
+                        }
+                    }
+                }
+            }
+            
         }
         .padding()
     }
-
     
 }
 
