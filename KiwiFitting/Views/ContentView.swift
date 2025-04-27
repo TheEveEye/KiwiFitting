@@ -46,6 +46,15 @@ struct ContentView: View {
             }
             if let typeID = resultTypeID {
                 ScrollView {
+                    if let invType = dataManager.InvTypes[typeID] {
+                        Text("Type details")
+                        
+                        ListItem(key: "Name", value: invType.name?["en"] ?? "Name not found")
+                        ListItem(key: "Descirption", value: invType.description?["en"] ?? "Description not found")
+                        ListItem(key: "Group", value: dataManager.MarketGroups[String(invType.marketGroupID!)]?.nameID?["en"] ?? "Group not found")
+                    }
+                    
+                    
                     Text("Effects")
                     
                     ForEach(dataManager.TypesDogma[typeID]!.dogmaEffects) {effect in
@@ -72,6 +81,19 @@ struct ContentView: View {
         .padding()
     }
     
+}
+
+struct ListItem: View {
+    var key: String
+    var value: String
+    
+    var body: some View {
+        HStack {
+            Text(key)
+            Spacer()
+            Text(value)
+        }
+    }
 }
 
 #Preview {
