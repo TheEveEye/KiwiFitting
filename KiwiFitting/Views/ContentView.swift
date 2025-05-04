@@ -79,6 +79,7 @@ struct ContentView: View {
             
         }
         .padding()
+        FittingWindow()
     }
     
 }

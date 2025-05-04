@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 public protocol Module {
     var typeID: String { get }
@@ -15,24 +16,25 @@ public protocol Module {
     var possibleStates: [ModuleState] { get }
 }
 
-public func inferModule(typeID: String) -> (any Module)? {
-    guard let slotType = inferSlotType(for: typeID) else {
-        return nil
-    }
-    
-    let possibleModuleTypes = inferPossibleStates(for: typeID)
-    
-    switch slotType {
-    case .high: return HighModule(typeID: typeID, type: inferHighSlotType(for: typeID))
-    case .mid:
-        return MidModule(typeID: typeID)
-    case .low:
-        return LowModule(typeID: typeID)
-    case .rig:
-        return RigModule(typeID: typeID)
-    case .subsystem:
-        return SubsystemModule(typeID: typeID)
-    }
+public func inferModule(typeID: String, slotType: SlotType? = nil) -> (any Module)? {
+    return HighModule(typeID: "3082", type: .turret)
+//    guard let slotType = inferSlotType(for: typeID) else {
+//        return nil
+//    }
+//    
+//    let possibleModuleTypes = inferPossibleStates(for: typeID)
+//    
+//    switch slotType {
+//    case .high: return HighModule(typeID: typeID, type: inferHighSlotType(for: typeID))
+//    case .mid:
+//        return MidModule(typeID: typeID)
+//    case .low:
+//        return LowModule(typeID: typeID)
+//    case .rig:
+//        return RigModule(typeID: typeID)
+//    case .coreSubsystem, .defensiveSubsystem, .propulsionSubsystem, .offensiveSubsystem:
+//        return SubsystemModule(typeID: typeID)
+//    }
     
 }
 
@@ -62,7 +64,7 @@ func inferSlotType(for typeID: String) -> SlotType? {
     } else if effects.contains(where: { effect in
         effect.effectID == 3772 // subSystem
     }) {
-        return .subsystem
+        return .coreSubsystem // FIXME: add differentiation between subsystem slots
     } else {
         return nil
     }
@@ -110,12 +112,15 @@ func inferHighSlotType(for typeID: String) -> HighSlotType {
     }
 }
 
-enum SlotType {
+public enum SlotType {
     case high
     case mid
     case low
     case rig
-    case subsystem
+    case defensiveSubsystem
+    case offensiveSubsystem
+    case propulsionSubsystem
+    case coreSubsystem
 }
 
 public enum ModuleState {
@@ -125,13 +130,36 @@ public enum ModuleState {
     case active
 }
 
+extension SlotType {
+    var image: Image {
+        switch self {
+        case .high:
+            return Image("highSlot")
+        case .mid:
+            return Image("midSlot")
+        case .low:
+            return Image("lowSlot")
+        case .rig:
+            return Image("rigSlot")
+        case .defensiveSubsystem:
+            return Image("defensiveSubsystem")
+        case .offensiveSubsystem:
+            return Image("offensiveSubsystem")
+        case .propulsionSubsystem:
+            return Image("propulsionSubsystem")
+        case .coreSubsystem:
+            return Image("coreSubsystem")
+        }
+    }
+}
+
 public struct ModuleCharge {
     var typeID: String
     var amount: Int
 }
 
-extension ModuleCharge {
-    public static var empty: ModuleCharge {
+public extension ModuleCharge {
+    static var empty: ModuleCharge {
         .init(typeID: "", amount: 0)
     }
 }

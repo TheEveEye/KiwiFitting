@@ -121,10 +121,10 @@
 //            id: UUID(),
 //            name: name,
 //            shipID: shipID,
-//            highSlots: highSlots,
-//            midSlots: midSlots,
-//            lowSlots: lowSlots,
-//            rigSlots: rigSlots,
+//            highSlots: highSlots.map { inferModule(typeID: $0)!},
+//            midSlots: midSlots.map { inferModule(typeID: $0)!},
+//            lowSlots: lowSlots.map { inferModule(typeID: $0)!},
+//            rigSlots: rigSlots.map { inferModule(typeID: $0)!},
 //            subsystems: subsystems,
 //            cargohold: cargohold
 //        )
