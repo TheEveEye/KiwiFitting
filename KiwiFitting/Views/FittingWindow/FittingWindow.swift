@@ -32,7 +32,7 @@ struct FittingWindow: View {
     var body: some View {
         ZStack {
             ForEach(Array(slotRotations.enumerated()), id: \.offset) { index, angle in
-                SlotView(slotType: slotType(for: index), module: inferModule(typeID: "3082"))
+                SlotView(slotType: slotType(for: index), module: inferModule(typeID: "3082"), rotationAngle: angle)
                     .rotationEffect(Angle(degrees: angle))
             }
         }

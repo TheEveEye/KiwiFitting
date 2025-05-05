@@ -11,6 +11,7 @@ struct SlotView: View {
     let slotType: SlotType
     @State public var module: Module?
     @State var state: SlotState = .online
+    var rotationAngle: Double
     
     var body: some View {
         GeometryReader { geometry in
@@ -52,6 +53,8 @@ struct SlotView: View {
             AsyncImage(url: URL(string: "https://images.evetech.net/types/\(module?.typeID ?? "0")/icon?size=64"), content: { image in
                         image
                             .resizable()
+                            .scaleEffect(1.2)
+                            .rotationEffect(.degrees(4.212 - rotationAngle))
                     }, placeholder: {
                         ProgressView()
                     })
@@ -77,7 +80,7 @@ struct SlotView: View {
 }
 
 #Preview {
-    SlotView(slotType: .high, module: inferModule(typeID: "482"))
+    SlotView(slotType: .high, module: inferModule(typeID: "482"), rotationAngle: 0)
         .scaleEffect(3)
         .transformEffect(CGAffineTransform(translationX: -500, y: 0))
 }
