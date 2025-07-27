@@ -6,48 +6,97 @@
 //
 
 import SwiftUI
-import SwiftData
+import DogmaEngine
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var dogmaEngineStatus: String = "Not loaded"
+    @State private var dataStats: String = ""
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationView {
+            VStack(spacing: 20) {
+                Text("KiwiFitting")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                
+                Text("Dogma Engine Test")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Status: \(dogmaEngineStatus)")
+                        .font(.headline)
+                    
+                    if !dataStats.isEmpty {
+                        Text(dataStats)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    
+                    Button("Test Dogma Engine") {
+                        testDogmaEngine()
                     }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                 }
+                .padding()
+                .background(.gray.opacity(0.1))
+                .cornerRadius(12)
+                
+                Spacer()
             }
-        } detail: {
-            Text("Select an item")
+            .padding()
+            .navigationTitle("KiwiFitting")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+    
+    private func testDogmaEngine() {
+        dogmaEngineStatus = "Loading..."
+        dataStats = ""
+        
+        Task {
+            do {
+                // Load the DogmaEngine data from bundle
+                let data = try DogmaEngine.Data.newFromBundle()
+                
+                // Create a simple ship fit (let's try a basic frigate)
+                // Ship type ID 587 is typically a Rifter (Minmatar frigate)
+                let fit = EsfFit(shipTypeID: 587, modules: [], drones: [])
+                
+                // Create an Info instance
+                let info = SimpleInfo(data: data, fit: fit)
+                
+                // Calculate ship stats
+                let ship = calculate(info: info)
+                
+                // Extract some basic stats
+                let shipType = data.types[587]
+                let shipName = shipType != nil ? "Ship ID \(587)" : "Unknown Ship"
+                
+                await MainActor.run {
+                    dogmaEngineStatus = "✅ Success: DogmaEngine calculation complete!"
+                    dataStats = """
+                    Data loaded:
+                    • \(data.types.count) ship/item types
+                    • \(data.dogmaAttributes.count) dogma attributes
+                    • \(data.dogmaEffects.count) dogma effects
+                    • \(data.typeDogma.count) type dogma entries
+                    
+                    Test Calculation:
+                    • Ship: \(shipName)
+                    • Category ID: \(shipType?.resolvedCategoryID ?? 0)
+                    • Group ID: \(shipType?.groupID ?? 0)
+                    
+                    ✅ DogmaEngine is working!
+                    """
+                }
+                
+            } catch {
+                await MainActor.run {
+                    dogmaEngineStatus = "❌ Failed: \(error.localizedDescription)"
+                    dataStats = "Error details: \(error)"
+                }
             }
         }
     }
@@ -55,5 +104,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
