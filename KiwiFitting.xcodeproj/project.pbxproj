@@ -45,6 +45,11 @@
 			path = KiwiFittingUITests;
 			sourceTree = "<group>";
 		};
+		753EB0C92E36417200BD6EC5 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 		753EB07F2E363FC700BD6EC5 = {
 			isa = PBXGroup;
 			children = (
+				753EB0C92E36417200BD6EC5 /* Resources */,
 				753EB08A2E363FC700BD6EC5 /* KiwiFitting */,
 				753EB09A2E363FC800BD6EC5 /* KiwiFittingTests */,
 				753EB0A42E363FC800BD6EC5 /* KiwiFittingUITests */,
