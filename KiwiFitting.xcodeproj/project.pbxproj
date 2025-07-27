@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		753EB1082E3643E900BD6EC5 /* DogmaEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 753EB1072E3643E900BD6EC5 /* DogmaEngine */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		753EB0982E363FC800BD6EC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -45,11 +49,6 @@
 			path = KiwiFittingUITests;
 			sourceTree = "<group>";
 		};
-		753EB0C92E36417200BD6EC5 /* Resources */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EB1082E3643E900BD6EC5 /* DogmaEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +80,10 @@
 		753EB07F2E363FC700BD6EC5 = {
 			isa = PBXGroup;
 			children = (
-				753EB0C92E36417200BD6EC5 /* Resources */,
 				753EB08A2E363FC700BD6EC5 /* KiwiFitting */,
 				753EB09A2E363FC800BD6EC5 /* KiwiFittingTests */,
 				753EB0A42E363FC800BD6EC5 /* KiwiFittingUITests */,
+				753EB1062E3643E900BD6EC5 /* Frameworks */,
 				753EB0892E363FC700BD6EC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +96,13 @@
 				753EB0A12E363FC800BD6EC5 /* KiwiFittingUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		753EB1062E3643E900BD6EC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +125,7 @@
 			);
 			name = KiwiFitting;
 			packageProductDependencies = (
+				753EB1072E3643E900BD6EC5 /* DogmaEngine */,
 			);
 			productName = KiwiFitting;
 			productReference = 753EB0882E363FC700BD6EC5 /* KiwiFitting.app */;
@@ -573,6 +581,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		753EB1072E3643E900BD6EC5 /* DogmaEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DogmaEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 753EB0802E363FC700BD6EC5 /* Project object */;
 }

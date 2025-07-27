@@ -50,4 +50,4 @@ playground.xcworkspace
 .idea/
 *.xcscmblueprint
 
-Resources/sde/*
+KiwiFitting/Resources/sde/*
